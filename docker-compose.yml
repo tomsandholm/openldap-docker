@@ -6,7 +6,7 @@ networks:
 services:
   openldap:
     container_name: oldp-srv
-    image: openldap
+    image: bitnami/openldap:2
     ports:
       - '389:1389'
       - '636:1636'
@@ -16,8 +16,8 @@ services:
       - LDAP_CONFIG_ADMIN_ENABLED=yes
       - LDAP_USERS=user01,user02
       - LDAP_PASSWORDS=password1,password2
-      - LDAP_ROOT=dc=example,dc=org
-      - LDAP_ADMIN_DN=cn=admin,dc=example,dc=org 
+      - LDAP_ROOT=dc=tsand,dc=org
+      - LDAP_ADMIN_DN=cn=admin,dc=tsand,dc=org 
       - LDAP_ADD_SCHEMAS="yes"
       - LDAP_EXTRA_SCHEMAS="sudo"
     networks:
